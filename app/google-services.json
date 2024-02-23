@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759563625417",
+    "project_id": "sweetlife-d845e",
+    "storage_bucket": "sweetlife-d845e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759563625417:android:5dcd04d9e83d79aec23e18",
+        "android_client_info": {
+          "package_name": "com.example.sweetlife"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDo0d0ifaQlX2qHkOXHDxpuqiCwC0_4rfg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
