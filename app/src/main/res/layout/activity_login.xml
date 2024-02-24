@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    android:padding="16dp">
+
+    <!-- Logo -->
+    <ImageView
+        android:id="@+id/Login_imageViewLogo"
+        android:layout_width="236dp"
+        android:layout_height="132dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="91dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="100dp"
+        android:src="@drawable/logo" />
+
+    <!-- Caja login -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_background"
+        android:gravity="center"
+        android:orientation="vertical">
+        <!-- login -->
+        <TextView
+            android:id="@+id/Registro_textViewLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:text="Login"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- usuario -->
+        <EditText
+            android:id="@+id/Login_editTextUsername"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Correo Electronico"
+            android:inputType="text"
+            android:paddingStart="16dp" />
+
+        <!-- contraseña -->
+        <EditText
+            android:id="@+id/Login_editTextContraseña"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_rounded"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:paddingStart="16dp" />
+
+        <!-- iniciar sesion -->
+        <Button
+            android:id="@+id/Login_btnIniciarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_rounded"
+            android:text="Iniciar Sesión" />
+
+        <!-- crear cuenta -->
+        <TextView
+            android:id="@+id/Login_textViewCrearCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="Crear una cuenta"
+            android:textColor="#e74d63"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>
