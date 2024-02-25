@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SweetLife</string>
+    <string name="preference_email_user" />
 </resources>
