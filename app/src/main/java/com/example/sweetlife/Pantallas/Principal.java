@@ -49,7 +49,7 @@ public class Principal extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent cambio = new Intent(Principal.this, Estado.class);
-
+                startActivity(cambio);
             }
         });
 
@@ -58,7 +58,7 @@ public class Principal extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent cambio = new Intent(Principal.this, Medidas.class);
-
+                startActivity(cambio);
             }
         });
 
@@ -67,7 +67,7 @@ public class Principal extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent cambio = new Intent(Principal.this, InformacionPersonal.class);
-
+                startActivity(cambio);
             }
         });
 
