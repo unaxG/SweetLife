@@ -176,7 +176,7 @@ public class Registro extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if(task.isSuccessful()) {
-                        Intent i = new Intent(Registro.this, MainActivity.class);
+                        Intent i = new Intent(Registro.this, Principal.class);
                         i.putExtra("usuario",usuario);
                         startActivity(i);
                     }
