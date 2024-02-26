@@ -13,6 +13,21 @@
         android:theme="@style/Theme.SweetLife"
         tools:targetApi="31">
         <activity
+            android:name=".Pantallas.InformacionPersonal"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.Medidas"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.Estado"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.Nutricion"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.Actividad"
+            android:exported="false" />
+        <activity
             android:name=".Pantallas.Principal"
             android:exported="false" />
         <activity
