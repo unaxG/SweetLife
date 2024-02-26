@@ -79,6 +79,20 @@
                 android:paddingStart="16dp" />
 
             <!-- peso -->
+
+            <EditText
+                android:id="@+id/Registro_editTextAltura"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_rounded"
+                android:ems="10"
+                android:hint="Altura (cm)"
+                android:inputType="number"
+                android:paddingStart="16dp" />
+
             <EditText
                 android:id="@+id/Registro_editTextPeso"
                 android:layout_width="match_parent"
@@ -92,6 +106,7 @@
                 android:paddingStart="16dp" />
 
             <!-- Email -->
+
             <EditText
                 android:id="@+id/Registro_editTextEmail"
                 android:layout_width="match_parent"
@@ -163,6 +178,12 @@
 
             <!-- presión arterial alta -->
             <CheckBox
+                android:id="@+id/Registro_checkboxPresionArterialBaja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tengo la presion arterial baja" />
+
+            <CheckBox
                 android:id="@+id/Registro_checkboxPresionArterialAlta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -176,6 +197,18 @@
                 android:text="Tengo artritis" />
 
             <!-- Button para registrarse -->
+            <CheckBox
+                android:id="@+id/Registro_checkboxAcidoUrico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tengo acido urico alto en sangre (Hiperuricemia)" />
+
+            <CheckBox
+                android:id="@+id/Registro_checkboxDiabetes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tengo diabetes" />
+
             <Button
                 android:id="@+id/Registro_btnRegistrarse"
                 android:layout_width="match_parent"
