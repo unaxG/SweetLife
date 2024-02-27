@@ -71,10 +71,12 @@ public class Principal extends AppCompatActivity {
         buttonCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent cambio = new Intent(Principal.this, Cuenta.class);
                 cambio.putExtra("usuario", usuario);
                 cambio.putExtra("informacion", (Serializable) infoUsuario);
                 startActivity(cambio);
+
             }
         });
 
