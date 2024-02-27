@@ -23,7 +23,7 @@
                 android:layout_weight="1" />
 
             <ImageView
-                android:id="@+id/medidas_imageViewAproximacionCuerpo"
+                android:id="@+id/principal_imageViewCuenta"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/user_logo" />

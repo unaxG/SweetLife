@@ -35,6 +35,7 @@ public class Principal extends AppCompatActivity {
     ImageView buttonEstado;
     ImageView buttonMedidas;
     ImageView buttonInformacionPersonal;
+    ImageView buttonCuenta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class Principal extends AppCompatActivity {
 
         bienvenida = (TextView) findViewById(R.id.PrincipalTextView_Datos);
 
-
+        buttonCuenta = findViewById(R.id.principal_imageViewCuenta);
         buttonActividad = (ImageButton) findViewById(R.id.Principal_btn_Actividad);
         buttonNutricion = (ImageButton) findViewById(R.id.Principal_btn_Nutricion);
         buttonEstado = (ImageView) findViewById(R.id.Principal_imgvw_Flecha1);
@@ -67,6 +68,15 @@ public class Principal extends AppCompatActivity {
         recogerInfoFirebase(usuario);
 
 
+        buttonCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cambio = new Intent(Principal.this, Cuenta.class);
+                cambio.putExtra("usuario", usuario);
+                cambio.putExtra("informacion", (Serializable) infoUsuario);
+                startActivity(cambio);
+            }
+        });
 
 
 

@@ -23,7 +23,7 @@ public class CondicionesPersonales extends AppCompatActivity {
         infoUsuario = (Informacion) bundle.getSerializable("informacion");
         usuario = bundle.getString("usuario");
 
-        TextView nombreUsuario = (TextView) findViewById(R.id.nutricion_textViewNombre);
+        TextView nombreUsuario = (TextView) findViewById(R.id.condiciones_textViewNombre);
         CheckBox fumador = (CheckBox) findViewById(R.id.condiciones_checkboxFuma);
         CheckBox problemasCorazon = (CheckBox) findViewById(R.id.condiciones_checkboxProblemasCorazon);
         CheckBox asma = (CheckBox) findViewById(R.id.condiciones_checkboxAsma);

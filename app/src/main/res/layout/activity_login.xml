@@ -6,7 +6,7 @@
 
     <!-- Logo -->
     <ImageView
-        android:id="@+id/medidas_imageViewAproximacionCuerpo"
+        android:id="@+id/principal_imageViewCuenta"
         android:layout_width="236dp"
         android:layout_height="132dp"
         android:layout_alignParentStart="true"

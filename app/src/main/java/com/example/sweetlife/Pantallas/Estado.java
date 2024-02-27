@@ -1,6 +1,8 @@
 package com.example.sweetlife.Pantallas;
 
 import android.os.Bundle;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +34,8 @@ public class Estado extends AppCompatActivity {
         TextView imc = (TextView) findViewById(R.id.textViewIMC);
         TextView categoriaPeso = (TextView) findViewById(R.id.textViewCategoriaPeso);
 
+        RelativeLayout layout = findViewById(R.id.layoutEstado);
+
         String categoria="";
 
 
@@ -39,19 +43,23 @@ public class Estado extends AppCompatActivity {
 
 
         if(IMC<18.5){
-            categoria="Usted tiene peso bajo";
-        }else  if(IMC>=18.5 && IMC<=24.9){
-            categoria="Usted tiene peso adecuado";
-        }else if(IMC>=25 && IMC<=29.9){
+            categoria="Usted tiene el peso bajo";
+            layout.setBackgroundResource(R.drawable.estado_background_azul); // Cambiar a fondo azul
+        } else if(IMC>=18.5 && IMC<=24.9){
+            categoria="Usted tiene un peso adecuado";
+            layout.setBackgroundResource(R.drawable.estado_background_verde); // Cambiar a fondo verde
+        } else if(IMC>=25 && IMC<=29.9){
             categoria="Usted tiene sobrepeso";
-        }else if(IMC>=30){
+            layout.setBackgroundResource(R.drawable.estado_background_amarillo); // Cambiar a fondo amarillo
+        } else if(IMC>=30){
             categoria="Usted tiene obesidad";
+            layout.setBackgroundResource(R.drawable.estado_background_rojo); // Cambiar a fondo rojo
         }
 
 
         altura.setText("Altura: "+infoUsuario.getAltura()+" cm");
         peso.setText("Peso: "+infoUsuario.getPeso()+" kg");
-        imc.setText("IMC: "+IMC);
+        imc.setText("Índice de Masa Corporal (IMC): "+IMC);
         categoriaPeso.setText(categoria);
 
 
@@ -60,7 +68,7 @@ public class Estado extends AppCompatActivity {
 
     public void calcularIMC(){
 
-       IMC=infoUsuario.getPeso() / ((infoUsuario.getAltura()/100)*(infoUsuario.getAltura()/100));
+        IMC=infoUsuario.getPeso() / ((infoUsuario.getAltura()/100)*(infoUsuario.getAltura()/100));
 
     }
 

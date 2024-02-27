@@ -1,8 +1,8 @@
 package com.example.sweetlife.Pantallas;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,18 +32,24 @@ public class Medidas extends AppCompatActivity {
         TextView altura = (TextView) findViewById(R.id.medidas_textViewAltura);
         TextView peso = (TextView) findViewById(R.id.medidas_textViewPeso);
 
-        ImageView aprox = (ImageView) findViewById(R.id.medidas_imageViewAproximacionCuerpo);
+        ImageView aprox = (ImageView) findViewById(R.id.principal_imageViewCuenta);
+
+        RelativeLayout layout = findViewById(R.id.layout_Medidas);
 
         calcularIMC();
 
         if(IMC<18.5){
             aprox.setImageDrawable(getDrawable(R.drawable.delgado));
+            layout.setBackgroundResource(R.drawable.estado_background_azul); // Cambiar a fondo azul
         }else  if(IMC>=18.5 && IMC<=24.9){
             aprox.setImageDrawable(getDrawable(R.drawable.peso_normal));
+            layout.setBackgroundResource(R.drawable.estado_background_verde); // Cambiar a fondo verde
         }else if(IMC>=25 && IMC<=29.9){
             aprox.setImageDrawable(getDrawable(R.drawable.sobrepeso));
+            layout.setBackgroundResource(R.drawable.estado_background_amarillo); // Cambiar a fondo amarillo
         }else if(IMC>=30){
             aprox.setImageDrawable(getDrawable(R.drawable.obesidad));
+            layout.setBackgroundResource(R.drawable.estado_background_rojo); // Cambiar a fondo rojo
         }
 
         altura.setText("Altura: "+infoUsuario.getAltura()+" cm");

@@ -1,109 +1,29 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
-
-    <!-- Logo -->
-
-    <!-- ScrollView para permitir desplazamiento -->
-
-    <TextView
-        android:id="@+id/textViewAprox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="115dp"
-        android:background="#742196F3"
-        android:text="Aproximacion estimada generada de los datos insertados" />
-
-    <ImageView
-        android:id="@+id/medidas_imageViewAproximacionCuerpo"
-        android:layout_width="338dp"
-        android:layout_height="208dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="181dp"
-        android:layout_marginEnd="36dp"
-        android:src="@drawable/logo" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/medidas_imageViewAproximacionCuerpo"
-        android:layout_marginTop="20dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@drawable/rounded_background"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <!-- login -->
-            <TextView
-                android:id="@+id/nutricion_textViewTitulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:text="Medidas"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <!-- nombre -->
-
-            <!-- apellidos -->
-
-            <!-- fecha de nacimiento -->
-
-            <!-- peso -->
-
-            <!-- Email -->
-
-            <!-- Contraseña -->
-
-            <!-- Repetir Contraseña -->
-
-            <!-- si fuma -->
-
-            <!-- si tiene problemas de corazón -->
-
-            <!-- problemas del corazón -->
-            <TextView
-                android:id="@+id/medidas_textViewAltura"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:paddingLeft="28dp"
-                android:paddingTop="10dp"
-                android:text="Altura: "
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/medidas_textViewPeso"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:paddingLeft="28dp"
-                android:text="Peso:"
-                android:textSize="24sp" />
-
-            <!-- presión arterial alta -->
-
-            <!-- artritis -->
-
-            <!-- Button para registrarse -->
-
-            <!-- Texto para ya tener una cuenta -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/layout_Medidas" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/background_login" android:padding="16dp">
+    <!--  Logo  -->
+    <!--  ScrollView para permitir desplazamiento  -->
+    <TextView android:id="@+id/textViewMedidasCorporales" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_marginTop="32dp" android:layout_marginBottom="40dp" android:text="Medidas Corporales" android:textAlignment="center" android:textSize="28sp" android:textStyle="bold"/>
+    <TextView android:id="@+id/textViewAprox" android:layout_width="395dp" android:layout_height="wrap_content" android:layout_below="@+id/textViewMedidasCorporales" android:layout_alignParentStart="true" android:layout_marginStart="0dp" android:layout_marginTop="5dp" android:text="Aproximacion estimada generada de los datos insertados"/>
+    <ImageView android:id="@+id/principal_imageViewCuenta" android:layout_width="match_parent" android:layout_height="290dp" android:layout_below="@+id/textViewAprox" android:layout_alignParentEnd="true" android:layout_marginTop="20dp" android:src="@drawable/logo"/>
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:layout_below="@id/principal_imageViewCuenta" android:layout_marginTop="20dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" android:background="@drawable/rounded_background" android:gravity="center" android:orientation="vertical">
+            <!--  login  -->
+            <TextView android:id="@+id/medidas_textViewTitulo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="10dp" android:layout_marginBottom="30dp" android:text="Medidas" android:textSize="24sp" android:textStyle="bold"/>
+            <!--  nombre  -->
+            <!--  apellidos  -->
+            <!--  fecha de nacimiento  -->
+            <!--  peso  -->
+            <!--  Email  -->
+            <!--  Contraseña  -->
+            <!--  Repetir Contraseña  -->
+            <!--  si fuma  -->
+            <!--  si tiene problemas de corazón  -->
+            <!--  problemas del corazón  -->
+            <TextView android:id="@+id/medidas_textViewAltura" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="10dp" android:layout_marginBottom="30dp" android:paddingLeft="28dp" android:paddingTop="10dp" android:text="Altura: " android:textSize="24sp"/>
+            <TextView android:id="@+id/medidas_textViewPeso" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="10dp" android:layout_marginBottom="30dp" android:paddingLeft="28dp" android:text="Peso:" android:textSize="24sp"/>
+            <!--  presión arterial alta  -->
+            <!--  artritis  -->
+            <!--  Button para registrarse  -->
+            <!--  Texto para ya tener una cuenta  -->
         </LinearLayout>
     </ScrollView>
-
 </RelativeLayout>
