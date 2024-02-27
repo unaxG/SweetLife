@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <!-- Logo -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/principal_imageViewCuenta"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/user_logo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/PrincipalTextView_Datos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/Principal_btn_Actividad"
+                    android:layout_width="85dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/actividad"
+                    android:scaleType="fitCenter" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:id="@+id/Principal_btn_Nutricion"
+                    android:layout_width="85dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/nutricion"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Principal_imgvw_Estado"
+                    android:layout_width="1dp"
+                    android:layout_height="75dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/estado" />
+
+                <TextView
+                    android:id="@+id/Principal_TextView_Estado"
+                    android:layout_width="234dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="20sp"
+                    android:layout_weight="1"
+                    android:text="Estado"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/Principal_imgvw_Flecha1"
+                    android:layout_width="6dp"
+                    android:layout_height="75dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/flecha" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Principal_imgvw_Medidas_Corporales"
+                    android:layout_width="1dp"
+                    android:layout_height="75dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/medidas_corporales" />
+
+                <TextView
+                    android:id="@+id/Principal_TextView_Medidas_Corporales"
+                    android:layout_width="234dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="20sp"
+                    android:layout_weight="1"
+                    android:text="Medidas Corporales"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/Principal_imgvw_Flecha2"
+                    android:layout_width="6dp"
+                    android:layout_height="75dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/flecha" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Principal_imgvw_Informacion_Personal"
+                    android:layout_width="1dp"
+                    android:layout_height="75dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/informacion_personal" />
+
+                <TextView
+                    android:id="@+id/Principal_TextView_Informacion_Personal"
+                    android:layout_width="234dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="20sp"
+                    android:layout_weight="1"
+                    android:text="Condiciones personales"
+                    android:textAlignment="center"
+                    android:textSize="24sp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/Principal_imgvw_Flecha3"
+                    android:layout_width="6dp"
+                    android:layout_height="75dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/flecha" />
+            </LinearLayout>
+        </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Caja login -->
+
+</RelativeLayout>
