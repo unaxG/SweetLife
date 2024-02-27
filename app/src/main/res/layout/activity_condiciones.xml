@@ -23,7 +23,7 @@
 
             <!-- login -->
             <TextView
-                android:id="@+id/medidas_textViewTitulo"
+                android:id="@+id/nutricion_textViewTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -36,7 +36,7 @@
             <!-- nombre -->
 
             <TextView
-                android:id="@+id/condiciones_textViewNombre"
+                android:id="@+id/nutricion_textViewNombre"
                 android:layout_width="379dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

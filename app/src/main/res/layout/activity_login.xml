@@ -27,7 +27,7 @@
         android:orientation="vertical">
         <!-- login -->
         <TextView
-            android:id="@+id/medidas_textViewTitulo"
+            android:id="@+id/nutricion_textViewTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
