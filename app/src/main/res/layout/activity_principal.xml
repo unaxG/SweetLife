@@ -42,7 +42,6 @@
                 android:id="@+id/PrincipalTextView_Datos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Datos para la salud"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textSize="34sp"
                 android:textStyle="bold" />
@@ -172,7 +171,7 @@
                     android:layout_height="55dp"
                     android:layout_marginTop="20sp"
                     android:layout_weight="1"
-                    android:text="Informacion Personal"
+                    android:text="Condiciones personales"
                     android:textAlignment="center"
                     android:textSize="24sp"
                     android:textStyle="italic" />

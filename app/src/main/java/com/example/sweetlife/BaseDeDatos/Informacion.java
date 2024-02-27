@@ -1,6 +1,8 @@
 package com.example.sweetlife.BaseDeDatos;
 
-public class Informacion {
+import java.io.Serializable;
+
+public class Informacion  implements Serializable {
 
     private String nombre;
     private String apellidos;
@@ -135,5 +137,9 @@ public class Informacion {
 
     public void setAltura(float altura) {
         this.altura = altura;
+    }
+
+    public Informacion() {
+
     }
 }

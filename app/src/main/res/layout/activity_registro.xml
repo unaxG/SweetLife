@@ -30,7 +30,7 @@
 
             <!-- login -->
             <TextView
-                android:id="@+id/Registro_textViewLogin"
+                android:id="@+id/condiciones_textViewTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -158,53 +158,53 @@
                 android:text="Rellene estos campos de ser necesario, si no dejelos sin seleccionar" />
 
             <CheckBox
-                android:id="@+id/Registro_checkboxFuma"
+                android:id="@+id/condiciones_checkboxFuma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fumo" />
 
             <CheckBox
-                android:id="@+id/Registro_checkboxProblemasCorazon"
+                android:id="@+id/condiciones_checkboxProblemasCorazon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tengo problemas de corazón" />
 
             <!-- problemas del corazón -->
             <CheckBox
-                android:id="@+id/Registro_checkboxAsma"
+                android:id="@+id/condiciones_checkboxAsma"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tengo asma" />
 
             <!-- presión arterial alta -->
             <CheckBox
-                android:id="@+id/Registro_checkboxPresionArterialBaja"
+                android:id="@+id/condiciones_checkboxPresionArterialBaja"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tengo la presion arterial baja" />
 
             <CheckBox
-                android:id="@+id/Registro_checkboxPresionArterialAlta"
+                android:id="@+id/condiciones_checkboxPresionArterialAlta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tengo la presion arterial alta" />
 
             <!-- artritis -->
             <CheckBox
-                android:id="@+id/Registro_checkboxArtritis"
+                android:id="@+id/condiciones_checkboxArtritis"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tengo artritis" />
 
             <!-- Button para registrarse -->
             <CheckBox
-                android:id="@+id/Registro_checkboxAcidoUrico"
+                android:id="@+id/condiciones_checkboxAcidoUrico"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tengo acido urico alto en sangre (Hiperuricemia)" />
 
             <CheckBox
-                android:id="@+id/Registro_checkboxDiabetes"
+                android:id="@+id/condiciones_checkboxDiabetes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tengo diabetes" />

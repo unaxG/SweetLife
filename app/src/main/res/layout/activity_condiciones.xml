@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6DC6BE"
+    android:padding="16dp">
+
+    <!-- Logo -->
+
+    <!-- ScrollView para permitir desplazamiento -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/Login_imageViewLogo"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- login -->
+            <TextView
+                android:id="@+id/condiciones_textViewTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Condiciones personales"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- nombre -->
+
+            <TextView
+                android:id="@+id/condiciones_textViewNombre"
+                android:layout_width="379dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Nombre"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <!-- apellidos -->
+
+            <!-- fecha de nacimiento -->
+
+            <!-- peso -->
+
+            <!-- Email -->
+
+            <!-- Contraseña -->
+
+            <!-- Repetir Contraseña -->
+
+            <!-- si fuma -->
+
+            <!-- si tiene problemas de corazón -->
+
+            <CheckBox
+                android:id="@+id/condiciones_checkboxFuma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="Fumador" />
+
+            <CheckBox
+                android:id="@+id/condiciones_checkboxProblemasCorazon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="Con problemas de corazón" />
+
+            <!-- problemas del corazón -->
+            <CheckBox
+                android:id="@+id/condiciones_checkboxAsma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="Asmatico" />
+
+            <!-- presión arterial alta -->
+            <CheckBox
+                android:id="@+id/condiciones_checkboxPresionArterialBaja"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="Presion arterial baja" />
+
+            <CheckBox
+                android:id="@+id/condiciones_checkboxPresionArterialAlta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="Presion arterial alta" />
+
+            <!-- artritis -->
+            <CheckBox
+                android:id="@+id/condiciones_checkboxArtritis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="Artritis" />
+
+            <!-- Button para registrarse -->
+            <CheckBox
+                android:id="@+id/condiciones_checkboxAcidoUrico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="Hiperuricemico" />
+
+            <CheckBox
+                android:id="@+id/condiciones_checkboxDiabetes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="Diabetico" />
+
+            <!-- Texto para ya tener una cuenta -->
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

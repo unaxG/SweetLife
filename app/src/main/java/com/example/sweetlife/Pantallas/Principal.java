@@ -1,27 +1,72 @@
 package com.example.sweetlife.Pantallas;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.sweetlife.BaseDeDatos.Informacion;
 import com.example.sweetlife.R;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.io.Serializable;
 
 public class Principal extends AppCompatActivity {
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    Informacion infoUsuario = new Informacion();
+
+    TextView bienvenida;
+
+
+    ImageButton buttonActividad;
+    ImageButton buttonNutricion;
+    ImageView buttonEstado;
+    ImageView buttonMedidas;
+    ImageView buttonInformacionPersonal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        ImageButton buttonActividad = (ImageButton) findViewById(R.id.Principal_btn_Actividad);
-        ImageButton buttonNutricion = (ImageButton) findViewById(R.id.Principal_btn_Nutricion);
-        ImageView buttonEstado = (ImageView) findViewById(R.id.Principal_imgvw_Flecha1);
-        ImageView buttonMedidas = (ImageView) findViewById(R.id.Principal_imgvw_Flecha2);
-        ImageView buttonInformacionPersonal = (ImageView) findViewById(R.id.Principal_imgvw_Flecha3);
+
+        bienvenida = (TextView) findViewById(R.id.PrincipalTextView_Datos);
+
+
+        buttonActividad = (ImageButton) findViewById(R.id.Principal_btn_Actividad);
+        buttonNutricion = (ImageButton) findViewById(R.id.Principal_btn_Nutricion);
+        buttonEstado = (ImageView) findViewById(R.id.Principal_imgvw_Flecha1);
+        buttonMedidas = (ImageView) findViewById(R.id.Principal_imgvw_Flecha2);
+        buttonInformacionPersonal = (ImageView) findViewById(R.id.Principal_imgvw_Flecha3);
+
+        buttonActividad.setClickable(false);
+        buttonNutricion.setClickable(false);
+        buttonEstado.setClickable(false);
+        buttonMedidas.setClickable(false);
+        buttonInformacionPersonal.setClickable(false);
+
+
+
+        Bundle bundle = getIntent().getExtras();
+        String usuario = bundle.getString("usuario");
+
+
+
+        recogerInfoFirebase(usuario);
+
+
 
 
 
@@ -30,6 +75,8 @@ public class Principal extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent cambio = new Intent(Principal.this, Actividad.class);
+                cambio.putExtra("usuario", usuario);
+                cambio.putExtra("informacion", (Serializable) infoUsuario);
                 startActivity(cambio);
 
             }
@@ -40,6 +87,8 @@ public class Principal extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent cambio = new Intent(Principal.this, Nutricion.class);
+                cambio.putExtra("usuario", usuario);
+                cambio.putExtra("informacion", (Serializable) infoUsuario);
                 startActivity(cambio);
             }
         });
@@ -49,6 +98,8 @@ public class Principal extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent cambio = new Intent(Principal.this, Estado.class);
+                cambio.putExtra("usuario", usuario);
+                cambio.putExtra("informacion", (Serializable) infoUsuario);
                 startActivity(cambio);
             }
         });
@@ -58,6 +109,8 @@ public class Principal extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent cambio = new Intent(Principal.this, Medidas.class);
+                cambio.putExtra("usuario", usuario);
+                cambio.putExtra("informacion", (Serializable) infoUsuario);
                 startActivity(cambio);
             }
         });
@@ -66,10 +119,40 @@ public class Principal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent cambio = new Intent(Principal.this, InformacionPersonal.class);
+                Intent cambio = new Intent(Principal.this, CondicionesPersonales.class);
+                cambio.putExtra("usuario", usuario);
+                cambio.putExtra("informacion", (Serializable) infoUsuario);
                 startActivity(cambio);
             }
         });
 
+    }
+
+    public void recogerInfoFirebase(String usuario){
+        db = FirebaseFirestore.getInstance();
+        DocumentReference docRef  = db.collection("Usuarios").document(usuario);
+        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Informacion informacion = documentSnapshot.toObject(Informacion.class);
+                Log.d(TAG, informacion.getNombre());
+
+
+                if(informacion.getNombre().length()>0){
+                    bienvenida.setText("Bienvenido "+informacion.getNombre()+"!");
+                }else{
+                    bienvenida.setText("Bienvenido usuario!");
+                }
+
+                infoUsuario=informacion;
+
+                buttonActividad.setClickable(true);
+                buttonNutricion.setClickable(true);
+                buttonEstado.setClickable(true);
+                buttonMedidas.setClickable(true);
+                buttonInformacionPersonal.setClickable(true);
+
+            }
+        });
     }
 }

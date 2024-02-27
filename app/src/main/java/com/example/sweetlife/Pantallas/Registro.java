@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,7 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.sweetlife.BaseDeDatos.Informacion;
-import com.example.sweetlife.MainActivity;
 import com.example.sweetlife.R;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +31,9 @@ public class Registro extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+    CheckBox presionBaja;
+    CheckBox presionAlta;
+
 // ...
 // Initialize Firebase Auth
 
@@ -43,6 +44,9 @@ public class Registro extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        presionBaja = (CheckBox) findViewById(R.id.condiciones_checkboxPresionArterialBaja);
+        presionAlta = (CheckBox) findViewById(R.id.condiciones_checkboxPresionArterialAlta);
+
 
         Button confirmar = (Button) findViewById(R.id.Registro_btnRegistrarse);
         TextView atras = (TextView) findViewById(R.id.Registro_textViewTengoCuenta);
@@ -51,6 +55,22 @@ public class Registro extends AppCompatActivity {
 
         EditText contrasenna = (EditText) findViewById(R.id.Registro_editTextContraseña);
         EditText contrasennaRepetir = (EditText) findViewById(R.id.Registro_editTextRepetirContraseña);
+
+
+        presionBaja.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presionAlta.setChecked(false);
+            }
+        });
+
+        presionAlta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presionBaja.setChecked(false);
+            }
+        });
+
 
         //listener textview volver a login
         atras.setOnClickListener(new View.OnClickListener() {
@@ -213,47 +233,39 @@ public class Registro extends AppCompatActivity {
         float insertarFloat = Float.parseFloat(peso.getText().toString());
         info.setPeso(insertarFloat);
 
-
-
         EditText altura = (EditText) findViewById(R.id.Registro_editTextAltura);
         insertarFloat = Float.parseFloat(altura.getText().toString());
         info.setAltura(insertarFloat);
 
-
-
-        CheckBox fuma = (CheckBox) findViewById(R.id.Registro_checkboxFuma);
+        CheckBox fuma = (CheckBox) findViewById(R.id.condiciones_checkboxFuma);
         boolean insertarBoolean = fuma.isChecked();
         info.setFumar(insertarBoolean);
 
-        CheckBox problemasCorazon = (CheckBox) findViewById(R.id.Registro_checkboxProblemasCorazon);
+        CheckBox problemasCorazon = (CheckBox) findViewById(R.id.condiciones_checkboxProblemasCorazon);
         insertarBoolean = problemasCorazon.isChecked();
         info.setProblemasCorazon(insertarBoolean);
 
-        CheckBox asma = (CheckBox) findViewById(R.id.Registro_checkboxAsma);
+        CheckBox asma = (CheckBox) findViewById(R.id.condiciones_checkboxAsma);
         insertarBoolean = asma.isChecked();
         info.setAsma(insertarBoolean);
 
 
-
-        CheckBox presionBaja = (CheckBox) findViewById(R.id.Registro_checkboxPresionArterialBaja);
         insertarBoolean = presionBaja.isChecked();
         info.setPresionBaja(insertarBoolean);
 
 
-
-        CheckBox presionAlta = (CheckBox) findViewById(R.id.Registro_checkboxPresionArterialAlta);
         insertarBoolean = presionAlta.isChecked();
         info.setPresionAlta(insertarBoolean);
 
-        CheckBox artritis = (CheckBox) findViewById(R.id.Registro_checkboxArtritis);
+        CheckBox artritis = (CheckBox) findViewById(R.id.condiciones_checkboxArtritis);
         insertarBoolean = artritis.isChecked();
         info.setArtritis(insertarBoolean);
 
-        CheckBox acidoUrico = (CheckBox) findViewById(R.id.Registro_checkboxAcidoUrico);
+        CheckBox acidoUrico = (CheckBox) findViewById(R.id.condiciones_checkboxAcidoUrico);
         insertarBoolean = acidoUrico.isChecked();
         info.setAcidoUrico(insertarBoolean);
 
-        CheckBox diabetes = (CheckBox) findViewById(R.id.Registro_checkboxDiabetes);
+        CheckBox diabetes = (CheckBox) findViewById(R.id.condiciones_checkboxDiabetes);
         insertarBoolean = diabetes.isChecked();
         info.setDiabetes(insertarBoolean);
 

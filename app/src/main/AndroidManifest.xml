@@ -13,7 +13,7 @@
         android:theme="@style/Theme.SweetLife"
         tools:targetApi="31">
         <activity
-            android:name=".Pantallas.InformacionPersonal"
+            android:name=".Pantallas.CondicionesPersonales"
             android:exported="false" />
         <activity
             android:name=".Pantallas.Medidas"

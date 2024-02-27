@@ -93,7 +93,6 @@ public class Login extends AppCompatActivity {
 
                                     //intent
                                     Intent cambio = new Intent(Login.this, Principal.class);
-
                                     cambio.putExtra("usuario", email);
                                     startActivity(cambio);
 
