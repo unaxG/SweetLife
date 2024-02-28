@@ -98,7 +98,7 @@ public class Principal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent cambio = new Intent(Principal.this, Nutricion.class);
+                Intent cambio = new Intent(Principal.this, Seleccion_Nutricion.class);
                 cambio.putExtra("usuario", usuario);
                 cambio.putExtra("informacion", (Serializable) infoUsuario);
                 startActivity(cambio);

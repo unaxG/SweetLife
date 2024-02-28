@@ -13,6 +13,12 @@
         android:theme="@style/Theme.SweetLife"
         tools:targetApi="31">
         <activity
+            android:name=".Pantallas.Seleccion_Nutricion"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.Comida_Seleccionada"
+            android:exported="false" />
+        <activity
             android:name=".Pantallas.Cuenta"
             android:exported="false" />
         <activity
@@ -25,7 +31,7 @@
             android:name=".Pantallas.Estado"
             android:exported="false" />
         <activity
-            android:name=".Pantallas.Nutricion"
+            android:name=".Pantallas.Comida_Lista"
             android:exported="false" />
         <activity
             android:name=".Pantallas.Actividad"

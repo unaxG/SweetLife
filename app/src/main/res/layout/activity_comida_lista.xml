@@ -14,6 +14,7 @@
         android:layout_marginTop="20dp">
 
         <LinearLayout
+            android:id="@+id/comida_lista_linearlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -29,7 +30,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
-                android:text="Nutricion"
+                android:text="Lista de comidas"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -42,43 +43,9 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
-                android:text="Recomendacion"
+                android:text="Recomendaciones:"
                 android:textAlignment="center"
                 android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/nutricion_textViewNombre"
-                android:layout_width="379dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:text="Nombre"
-                android:textAlignment="center"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/nutricion_textViewDescripcion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:text="Descripcion"
-                android:textAlignment="center"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/nutricion_textViewIngredientes"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
-                android:text="Ingredientes"
-                android:textAlignment="center"
-                android:textSize="20sp" />
 
             <!-- apellidos -->
 

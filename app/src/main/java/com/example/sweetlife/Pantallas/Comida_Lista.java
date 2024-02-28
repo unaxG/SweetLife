@@ -2,8 +2,14 @@ package com.example.sweetlife.Pantallas;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,7 +26,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class Nutricion extends AppCompatActivity {
+public class Comida_Lista extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -29,26 +35,23 @@ public class Nutricion extends AppCompatActivity {
 
     float IMC=0;
 
-    TextView nombre;
+    View linearLayout;
 
     ArrayList<Comida> comidas = new ArrayList<Comida>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nutricion);
-
+        setContentView(R.layout.activity_comida_lista);
+        linearLayout =  findViewById(R.id.comida_lista_linearlayout);
 
 
         Bundle bundle = getIntent().getExtras();
-        infoUsuario = (Informacion) bundle.getSerializable("informacion");
+        infoUsuario = (Informacion) bundle.getSerializable("nueva_informacion");
 
         usuario = bundle.getString("usuario");
 
         TextView recomendacion = (TextView) findViewById(R.id.nutricion_textViewRecomendacion);
-        nombre = (TextView) findViewById(R.id.nutricion_textViewNombre);
-        TextView descripcion = (TextView) findViewById(R.id.nutricion_textViewDescripcion);
-        TextView ingredientes = (TextView) findViewById(R.id.nutricion_textViewIngredientes);
 
         calcularIMC();
 
@@ -109,11 +112,42 @@ public class Nutricion extends AppCompatActivity {
 
     public void colocarComida(){
 
-        nombre.setText(comidas.get(0).getNombre());
+        for(int i = 0; i < comidas.size(); i++){
+
+            TextView comida = new TextView(Comida_Lista.this);
+
+            //atributos del textview y layout
+            comida.setText(comidas.get(i).getNombre());
+            comida.setId(i);
+            comida.setTextSize(25);
+            comida.setGravity(Gravity.CENTER);
+            comida.setTypeface(null, Typeface.BOLD);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+
+            );
+            params.setMargins(0, 10, 0, 30);
+            comida.setLayoutParams(params); //aplicar cambios de estylo
+
+            //añadir textview
+            ((LinearLayout) linearLayout).addView(comida);
+
+            //textview onclicklistener
+            comida.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //pasar a la pagina de comida seleccionada
+                    Intent cambio = new Intent(Comida_Lista.this, Comida_Seleccionada.class);
+                    cambio.putExtra("comida_nombre", comida.getText());
+                    startActivity(cambio);
+                }
+            });
 
 
+        }//fin bucle
 
-    }
+    } //fin metodo colocarcomida
 
 
 }
