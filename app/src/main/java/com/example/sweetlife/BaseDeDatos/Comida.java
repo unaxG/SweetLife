@@ -9,10 +9,13 @@ public class Comida implements Serializable {
     private String descripcion;
     private String ingredientes;
 
-    public Comida(String nombre, String descripcion, String ingredientes) {
+    private String url;
+
+    public Comida(String nombre, String descripcion, String ingredientes, String url) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.ingredientes = ingredientes;
+        this.url = url;
     }
 
     public Comida() {
@@ -40,5 +43,13 @@ public class Comida implements Serializable {
 
     public void setIngredientes(String ingredientes) {
         this.ingredientes = ingredientes;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
