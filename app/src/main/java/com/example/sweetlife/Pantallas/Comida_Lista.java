@@ -3,6 +3,7 @@ package com.example.sweetlife.Pantallas;
 import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import android.graphics.drawable.GradientDrawable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -195,9 +197,19 @@ public class Comida_Lista extends AppCompatActivity {
             //atributos del textview y layout
             comida.setText(comidas.get(i).getNombre());
             comida.setId(i);
-            comida.setTextSize(25);
+            comida.setTextSize(20);
             comida.setGravity(Gravity.CENTER);
-            comida.setTypeface(null, Typeface.BOLD);
+
+            /*
+            // Definir el fondo del TextView
+            GradientDrawable drawable = new GradientDrawable();
+            drawable.setShape(GradientDrawable.RECTANGLE);
+            drawable.setCornerRadius(8); // radio giro
+            int colorfondo = Color.parseColor("#FCE4EC");
+            drawable.setColor(colorfondo); // color
+            comida.setBackground(drawable);
+            */
+            comida.setTypeface(null, Typeface.ITALIC);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT
@@ -208,6 +220,18 @@ public class Comida_Lista extends AppCompatActivity {
 
             //añadir textview
             ((LinearLayout) linearLayout).addView(comida);
+
+            // Crear un view como línea decorativa
+            View linea = new View(Comida_Lista.this);
+            linea.setLayoutParams(new LinearLayout.LayoutParams(
+                    800, // ancho de la línea en pixeles
+                    5    // altura de la línea en pixeles
+            ));
+            int colorfondo = Color.parseColor("#d1727c");
+            linea.setBackgroundColor(colorfondo);
+
+            // Agregar la linea al LinearLayout
+            ((LinearLayout) linearLayout).addView(linea);
 
             //textview onclicklistener
             comida.setOnClickListener(new View.OnClickListener() {

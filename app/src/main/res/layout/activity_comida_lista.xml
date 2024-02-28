@@ -4,13 +4,11 @@
     android:background="#6DC6BE"
     android:padding="16dp">
 
-    <!-- Logo -->
 
     <!-- ScrollView para permitir desplazamiento -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/principal_imageViewCuenta"
         android:layout_marginTop="20dp">
 
         <LinearLayout
@@ -30,7 +28,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
-                android:text="Lista de comidas"
+                android:text="Lista de comidas para usted"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -45,33 +43,8 @@
                 android:layout_marginBottom="30dp"
                 android:text="Recomendaciones:"
                 android:textAlignment="center"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
 
-            <!-- apellidos -->
-
-            <!-- fecha de nacimiento -->
-
-            <!-- peso -->
-
-            <!-- Email -->
-
-            <!-- Contraseña -->
-
-            <!-- Repetir Contraseña -->
-
-            <!-- si fuma -->
-
-            <!-- si tiene problemas de corazón -->
-
-            <!-- problemas del corazón -->
-
-            <!-- presión arterial alta -->
-
-            <!-- artritis -->
-
-            <!-- Button para registrarse -->
-
-            <!-- Texto para ya tener una cuenta -->
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
