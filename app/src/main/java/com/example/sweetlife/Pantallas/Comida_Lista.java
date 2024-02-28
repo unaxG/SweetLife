@@ -24,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Comida_Lista extends AppCompatActivity {
@@ -36,6 +37,10 @@ public class Comida_Lista extends AppCompatActivity {
     float IMC=0;
 
     View linearLayout;
+
+    String estado="";
+
+    Comida comidaSeleccionada;
 
     ArrayList<Comida> comidas = new ArrayList<Comida>();
 
@@ -55,16 +60,20 @@ public class Comida_Lista extends AppCompatActivity {
 
         calcularIMC();
 
-        String estado="";
+
 
         if(IMC<18.5){
             estado="delgado";
+            recogerInfoFirebase(estado);
         }else  if(IMC>=18.5 && IMC<=24.9){
             estado="normal";
+            recogerTodaInfoFirebase();
         }else if(IMC>=25 && IMC<=29.9){
             estado="sobrepeso";
+            recogerInfoFirebase(estado);
         }else if(IMC>=30){
             estado="obesidad";
+            recogerInfoFirebase(estado);
         }
 
         recogerInfoFirebase(estado);
@@ -102,10 +111,77 @@ public class Comida_Lista extends AppCompatActivity {
 
 
                 });
+    }
+
+    public void recogerTodaInfoFirebase(){
+        db = FirebaseFirestore.getInstance();
+        db.collection("Comidas")
+                .document("delgado")
+                .collection("1")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Comida comida = document.toObject(Comida.class);
+                                comidas.add(comida);
+                            }
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+
+                        db.collection("Comidas")
+                                .document("sobrepeso")
+                                .collection("1")
+                                .get()
+                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                                Comida comida = document.toObject(Comida.class);
+                                                comidas.add(comida);
+                                            }
+                                        } else {
+                                            Log.d(TAG, "Error getting documents: ", task.getException());
+                                        }
+
+                                        db.collection("Comidas")
+                                                .document("obesidad")
+                                                .collection("1")
+                                                .get()
+                                                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                                        if (task.isSuccessful()) {
+                                                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                                                Comida comida = document.toObject(Comida.class);
+                                                                comidas.add(comida);
+                                                            }
+                                                        } else {
+                                                            Log.d(TAG, "Error getting documents: ", task.getException());
+                                                        }
+
+                                                        colocarComida();
+
+                                                    }
 
 
 
+                                                });
 
+                                    }
+
+
+
+                                });
+
+                    }
+
+
+
+                });
     }
 
 
@@ -138,9 +214,17 @@ public class Comida_Lista extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     //pasar a la pagina de comida seleccionada
+
+                    for(int i=0;i<comidas.size();i++){
+                        if(comidas.get(i).getNombre().equals(comida.getText())){
+                            comidaSeleccionada=comidas.get(i);
+                        }
+                    }
+
                     Intent cambio = new Intent(Comida_Lista.this, Comida_Seleccionada.class);
-                    cambio.putExtra("comida_nombre", comida.getText());
+                    cambio.putExtra("receta", (Serializable) comidaSeleccionada);
                     startActivity(cambio);
+
                 }
             });
 
