@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:backgroundTint="#9AD1A7AC"
+    android:padding="16dp">
+
+    <!-- Logo -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/seleccion_actividad_imageViewCuenta"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/user_logo" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/seleccion_actividad_textViewTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:text="Seleccione una opcion:"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="64dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/seleccion_actividad_linearlayout_Brazo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#A3E8FFE9"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/seleccion_actividadl_imgvw_Brazo"
+                        android:layout_width="1dp"
+                        android:layout_height="75dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/bebida_logo" />
+
+                    <TextView
+                        android:id="@+id/seleccion_actividad_TextView_Brazo"
+                        android:layout_width="234dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="35sp"
+                        android:layout_weight="1"
+                        android:text="BRAZO"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/seleccion_actividad_linearlayout_Torso"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#A3E8FFE9"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/seleccion_actividad_imgvw_Torso"
+                        android:layout_width="37dp"
+                        android:layout_height="75dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/comida_logo" />
+
+                    <TextView
+                        android:id="@+id/seleccion_actividad_TextView_Torso"
+                        android:layout_width="234dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="35sp"
+                        android:layout_weight="1"
+                        android:text="TORSO"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp" />
+
+                <LinearLayout
+                    android:id="@+id/seleccion_actividad_linearlayout_Pierna"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="#A3E8FFE9"
+                    android:orientation="horizontal">
+
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/seleccion_actividadl_imgvw_Pierna"
+                        android:layout_width="1dp"
+                        android:layout_height="75dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/bebida_logo" />
+
+                    <TextView
+                        android:id="@+id/seleccion_actividad_TextView_Pierna"
+                        android:layout_width="234dp"
+                        android:layout_height="55dp"
+                        android:layout_marginTop="35sp"
+                        android:layout_weight="1"
+                        android:text="PIERNA"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Caja login -->
+
+</RelativeLayout>
