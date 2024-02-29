@@ -207,11 +207,6 @@ public class Cuenta extends AppCompatActivity {
         info.setDiabetes(insertarBoolean);
 
 
-
-
-
-
-
         return correcto;
     }
 

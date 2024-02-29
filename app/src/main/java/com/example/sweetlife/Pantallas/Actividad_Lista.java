@@ -232,7 +232,7 @@ public class Actividad_Lista extends AppCompatActivity {
                         800, // ancho de la línea en pixeles
                         5    // altura de la línea en pixeles
                 ));
-                int colorfondo = Color.parseColor("#d1727c");
+                int colorfondo = Color.parseColor("#201f1d");
                 linea.setBackgroundColor(colorfondo);
 
                 // Agregar la linea al LinearLayout

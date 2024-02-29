@@ -1,16 +1,20 @@
 package com.example.sweetlife.Pantallas;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.sweetlife.BaseDeDatos.Informacion;
 import com.example.sweetlife.R;
 
 public class Estado extends AppCompatActivity {
+
+    ImageView gift_estado;
 
     Informacion infoUsuario = new Informacion();
     String usuario;
@@ -29,6 +33,9 @@ public class Estado extends AppCompatActivity {
 
         usuario = bundle.getString("usuario");
 
+        // ImageView donde se mostrará el GIF
+        gift_estado = findViewById(R.id.estado_gift_estado);
+
         TextView altura = (TextView) findViewById(R.id.textViewAltura);
         TextView peso = (TextView) findViewById(R.id.textViewPeso);
         TextView imc = (TextView) findViewById(R.id.textViewIMC);
@@ -45,15 +52,23 @@ public class Estado extends AppCompatActivity {
         if(IMC<18.5){
             categoria="Usted tiene el peso bajo";
             layout.setBackgroundResource(R.drawable.estado_background_azul); // Cambiar a fondo azul
+            // Iniciar la animación del GIF
+            Glide.with(getBaseContext()).load(R.drawable.ritmo_cardiaco_azul).into(gift_estado);
         } else if(IMC>=18.5 && IMC<=24.9){
             categoria="Usted tiene un peso adecuado";
             layout.setBackgroundResource(R.drawable.estado_background_verde); // Cambiar a fondo verde
+            // Iniciar la animación del GIF
+            Glide.with(getBaseContext()).load(R.drawable.ritmo_cardiaco_verde).into(gift_estado);
         } else if(IMC>=25 && IMC<=29.9){
             categoria="Usted tiene sobrepeso";
             layout.setBackgroundResource(R.drawable.estado_background_amarillo); // Cambiar a fondo amarillo
+            // Iniciar la animación del GIF
+            Glide.with(getBaseContext()).load(R.drawable.ritmo_cardiaco_amarillo).into(gift_estado);
         } else if(IMC>=30){
             categoria="Usted tiene obesidad";
             layout.setBackgroundResource(R.drawable.estado_background_rojo); // Cambiar a fondo rojo
+            // Iniciar la animación del GIF
+            Glide.with(getBaseContext()).load(R.drawable.ritmo_cardiaco_rojo).into(gift_estado);
         }
 
 

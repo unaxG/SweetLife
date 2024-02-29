@@ -45,7 +45,7 @@ public class Seleccion_Nutricion extends AppCompatActivity {
 
                 Intent cambio = new Intent(Seleccion_Nutricion.this, Cuenta.class);
                 cambio.putExtra("usuario", usuario);
-                cambio.putExtra("nueva_informacion", (Serializable) este_infoUsuario);
+                cambio.putExtra("informacion", (Serializable) este_infoUsuario);
                 startActivity(cambio);
 
             }
@@ -61,9 +61,9 @@ public class Seleccion_Nutricion extends AppCompatActivity {
                 Bundle bundle = getIntent().getExtras();
                 este_infoUsuario = (Informacion) bundle.getSerializable("informacion");
 
-                Intent cambio = new Intent(Seleccion_Nutricion.this, Comida_Lista.class);
+                Intent cambio = new Intent(Seleccion_Nutricion.this, Cuenta.class);
                 cambio.putExtra("usuario", usuario);
-                cambio.putExtra("nueva_informacion", (Serializable) este_infoUsuario);
+                cambio.putExtra("informacion", (Serializable) este_infoUsuario);
                 startActivity(cambio);
             }
         });

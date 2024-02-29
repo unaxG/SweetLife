@@ -47,7 +47,7 @@ public class Seleccion_Actividad extends AppCompatActivity {
 
                 Intent cambio = new Intent(Seleccion_Actividad.this, Cuenta.class);
                 cambio.putExtra("usuario", usuario);
-                cambio.putExtra("nueva_informacion", (Serializable) este_infoUsuario);
+                cambio.putExtra("informacion", (Serializable) este_infoUsuario);
                 startActivity(cambio);
 
             }

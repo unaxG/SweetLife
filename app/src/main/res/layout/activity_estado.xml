@@ -1,21 +1,101 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/layoutEstado" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/background_login" android:padding="16dp">
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:layout_centerInParent="true" android:gravity="center" android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutEstado"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
         <!--  Título  -->
-        <TextView android:id="@+id/textViewTitulo" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="40dp" android:text="Estado" android:textAlignment="center" android:textSize="28sp" android:textStyle="bold"/>
-        <!--  Altura  -->
-        <Space android:layout_width="match_parent" android:layout_height="78dp"/>
-        <TextView android:id="@+id/textViewAltura" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:paddingStart="16dp" android:text="Altura:" android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/textViewTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="40dp"
+            android:text="Estado"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+        <!--  Gift  -->
+        <ImageView
+            android:id="@+id/estado_gift_estado"
+            android:layout_width="match_parent"
+            android:layout_height="127dp"
+            android:background="#72AAAAAA"
+            android:src="@drawable/imagen_main" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
+
+        <TextView
+            android:id="@+id/textViewAltura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="16dp"
+            android:text="Altura:"
+            android:textSize="20sp" />
         <!--  Peso  -->
-        <Space android:layout_width="match_parent" android:layout_height="10dp"/>
-        <TextView android:id="@+id/textViewPeso" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="1dp" android:paddingStart="16dp" android:text="Peso:" android:textSize="20sp"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/textViewPeso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:paddingStart="16dp"
+            android:text="Peso:"
+            android:textSize="20sp" />
         <!--  IMC  -->
-        <Space android:layout_width="match_parent" android:layout_height="10dp"/>
-        <TextView android:id="@+id/textViewIMC" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:paddingStart="16dp" android:text="Índice de Masa Corporal (IMC):" android:textSize="20sp" android:textStyle="bold"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/textViewIMC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="16dp"
+            android:text="Índice de Masa Corporal (IMC):"
+            android:textSize="20sp"
+            android:textStyle="bold" />
         <!--  Categoría de Peso  -->
-        <Space android:layout_width="match_parent" android:layout_height="10dp"/>
-        <TextView android:id="@+id/textViewCategoriaPeso" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:paddingStart="16dp" android:text="Usted tiene " android:textSize="20sp" android:textStyle="bold"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/textViewCategoriaPeso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="16dp"
+            android:text="Usted tiene "
+            android:textSize="20sp"
+            android:textStyle="bold" />
         <!--  Escala de IMC  -->
-        <Space android:layout_width="match_parent" android:layout_height="49dp"/>
-        <ImageView android:id="@+id/imageViewEscalaIMC" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:layout_marginBottom="24dp" android:adjustViewBounds="true" android:scaleType="fitCenter" android:src="@drawable/imc"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="49dp" />
+
+        <ImageView
+            android:id="@+id/imageViewEscalaIMC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/imc" />
     </LinearLayout>
 </RelativeLayout>

@@ -2,8 +2,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    android:backgroundTint="#9AD1A7AC"
+    android:backgroundTint="#a1a1a1"
     android:padding="16dp">
 
     <!-- Logo -->
@@ -54,111 +55,141 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/seleccion_actividad_linearlayout_Brazo"
+                <!-- Primer CardView -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#A3E8FFE9"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:radius="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="24dp">
 
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                    <!-- Contenido del primer CardView -->
+                    <LinearLayout
+                        android:id="@+id/seleccion_actividad_linearlayout_Brazo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/seleccion_actividadl_imgvw_Brazo"
-                        android:layout_width="1dp"
-                        android:layout_height="75dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/bebida_logo" />
+                        <!-- Contenido del LinearLayout -->
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
 
-                    <TextView
-                        android:id="@+id/seleccion_actividad_TextView_Brazo"
-                        android:layout_width="234dp"
-                        android:layout_height="55dp"
-                        android:layout_marginTop="35sp"
-                        android:layout_weight="1"
-                        android:text="BRAZO"
-                        android:textAlignment="center"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/seleccion_actividad_TextView_Brazo"
+                            android:layout_width="234dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="35sp"
+                            android:layout_weight="1"
+                            android:text="BRAZO"
+                            android:textAlignment="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-                </LinearLayout>
+                        <ImageView
+                            android:id="@+id/seleccion_actividadl_imgvw_Brazo"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/brazo_logo" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:id="@+id/seleccion_actividad_linearlayout_Torso"
+                <!-- Segundo CardView -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="#A3E8FFE9"
-                    android:orientation="horizontal">
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:radius="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="24dp">
 
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
 
-                    <ImageView
-                        android:id="@+id/seleccion_actividad_imgvw_Torso"
-                        android:layout_width="37dp"
-                        android:layout_height="75dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/comida_logo" />
+                    <LinearLayout
+                        android:id="@+id/seleccion_actividad_linearlayout_Torso"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/seleccion_actividad_TextView_Torso"
-                        android:layout_width="234dp"
-                        android:layout_height="55dp"
-                        android:layout_marginTop="35sp"
-                        android:layout_weight="1"
-                        android:text="TORSO"
-                        android:textAlignment="center"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        <!-- Contenido del LinearLayout -->
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
 
-                </LinearLayout>
+                        <TextView
+                            android:id="@+id/seleccion_actividad_TextView_Torso"
+                            android:layout_width="234dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="35sp"
+                            android:layout_weight="1"
+                            android:text="TORSO"
+                            android:textAlignment="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-                <Space
+                        <ImageView
+                            android:id="@+id/seleccion_actividad_imgvw_Torso"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/torso_logo" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Tercer CardView -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="15dp" />
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:radius="8dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="24dp">
 
-                <LinearLayout
-                    android:id="@+id/seleccion_actividad_linearlayout_Pierna"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="#A3E8FFE9"
-                    android:orientation="horizontal">
+                    <!-- Contenido del tercer CardView -->
+                    <LinearLayout
+                        android:id="@+id/seleccion_actividad_linearlayout_Pierna"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
-                    <Space
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        <!-- Contenido del LinearLayout -->
+                        <Space
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
 
-                    <ImageView
-                        android:id="@+id/seleccion_actividadl_imgvw_Pierna"
-                        android:layout_width="1dp"
-                        android:layout_height="75dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/bebida_logo" />
+                        <TextView
+                            android:id="@+id/seleccion_actividad_TextView_Pierna"
+                            android:layout_width="234dp"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="35sp"
+                            android:layout_weight="1"
+                            android:text="PIERNA"
+                            android:textAlignment="center"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/seleccion_actividad_TextView_Pierna"
-                        android:layout_width="234dp"
-                        android:layout_height="55dp"
-                        android:layout_marginTop="35sp"
-                        android:layout_weight="1"
-                        android:text="PIERNA"
-                        android:textAlignment="center"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
+                        <ImageView
+                            android:id="@+id/seleccion_actividadl_imgvw_Pierna"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/pierna_logo" />
 
-                </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
         </ScrollView>
+
+
     </LinearLayout>
 
     <!-- Caja login -->

@@ -1,33 +1,128 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/background_login" android:padding="16dp">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_login"
+    android:padding="16dp">
     <!--  Logo  -->
     <!--  ScrollView para permitir desplazamiento  -->
-    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"  android:layout_marginTop="20dp">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" android:background="@drawable/rounded_background" android:gravity="center" android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_background"
+            android:gravity="center"
+            android:orientation="vertical">
             <!--  Título  -->
-            <TextView android:id="@+id/medidas_textViewTitulo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_horizontal" android:layout_marginTop="10dp" android:layout_marginBottom="30dp" android:text="Cuenta" android:textSize="24sp" android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/medidas_textViewTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Cuenta"
+                android:textSize="24sp"
+                android:textStyle="bold" />
             <!--  Nombre  -->
-            <EditText android:id="@+id/Registro_editTextNombre" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:background="@drawable/edittext_rounded" android:hint="Nombre" android:inputType="text" android:paddingStart="16dp"/>
+            <EditText
+                android:id="@+id/Registro_editTextNombre"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_rounded"
+                android:hint="Nombre"
+                android:inputType="text"
+                android:paddingStart="16dp" />
             <!--  Apellidos  -->
-            <EditText android:id="@+id/Registro_editTextApellidos" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginStart="16dp" android:layout_marginTop="16dp" android:layout_marginEnd="16dp" android:background="@drawable/edittext_rounded" android:hint="Apellidos" android:inputType="text" android:paddingStart="16dp"/>
+            <EditText
+                android:id="@+id/Registro_editTextApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_rounded"
+                android:hint="Apellidos"
+                android:inputType="text"
+                android:paddingStart="16dp" />
             <!--  Fecha de Nacimiento  -->
-            <EditText android:id="@+id/Registro_editTextFechaNacimiento" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginStart="16dp" android:layout_marginTop="16dp" android:layout_marginEnd="16dp" android:background="@drawable/edittext_rounded" android:hint="Fecha de Nacimiento(dia/mes/año)" android:inputType="date" android:paddingStart="16dp"/>
+            <EditText
+                android:id="@+id/Registro_editTextFechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_rounded"
+                android:hint="Fecha de Nacimiento(dia/mes/año)"
+                android:inputType="date"
+                android:paddingStart="16dp" />
             <!--  Altura  -->
-            <EditText android:id="@+id/Registro_editTextAltura" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginStart="16dp" android:layout_marginTop="16dp" android:layout_marginEnd="16dp" android:background="@drawable/edittext_rounded" android:ems="10" android:hint="Altura (cm)" android:inputType="number" android:paddingStart="16dp"/>
+            <EditText
+                android:id="@+id/Registro_editTextAltura"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_rounded"
+                android:ems="10"
+                android:hint="Altura (cm)"
+                android:inputType="number"
+                android:paddingStart="16dp" />
             <!--  Peso  -->
-            <EditText android:id="@+id/Registro_editTextPeso" android:layout_width="match_parent" android:layout_height="55dp" android:layout_marginStart="16dp" android:layout_marginTop="16dp" android:layout_marginEnd="16dp" android:background="@drawable/edittext_rounded" android:hint="Peso (kg)" android:inputType="numberDecimal" android:paddingStart="16dp"/>
+            <EditText
+                android:id="@+id/Registro_editTextPeso"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/edittext_rounded"
+                android:hint="Peso (kg)"
+                android:inputType="numberDecimal"
+                android:paddingStart="16dp" />
             <!--  Email  -->
             <!--  Contraseña  -->
             <!--  Repetir Contraseña  -->
             <!--  Información Personal  -->
-            <TextView android:id="@+id/medidas_textViewInfoPersonal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="8dp" android:text="Información Personal" android:textSize="20sp" android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/medidas_textViewInfoPersonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="Información Personal"
+                android:textSize="20sp"
+                android:textStyle="bold" />
             <!--  CheckBoxes para condiciones  -->
-            <CheckBox android:id="@+id/condiciones_checkboxFuma" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Fumo"/>
-            <CheckBox android:id="@+id/condiciones_checkboxProblemasCorazon" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tengo problemas de corazón"/>
-            <CheckBox android:id="@+id/condiciones_checkboxAsma" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tengo asma"/>
+            <CheckBox
+                android:id="@+id/condiciones_checkboxFuma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fumo" />
+
+            <CheckBox
+                android:id="@+id/condiciones_checkboxProblemasCorazon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tengo problemas de corazón" />
+
+            <CheckBox
+                android:id="@+id/condiciones_checkboxAsma"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tengo asma" />
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/cuenta_radioButtonPresionBaja"
@@ -42,12 +137,37 @@
                     android:text="Tengo la presion arterial alta" />
             </RadioGroup>
 
-            <CheckBox android:id="@+id/condiciones_checkboxArtritis" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tengo artritis"/>
-            <CheckBox android:id="@+id/condiciones_checkboxAcidoUrico" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tengo ácido úrico alto en sangre (Hiperuricemia)"/>
-            <CheckBox android:id="@+id/condiciones_checkboxDiabetes" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tengo diabetes"/>
+            <CheckBox
+                android:id="@+id/condiciones_checkboxArtritis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tengo artritis" />
+
+            <CheckBox
+                android:id="@+id/condiciones_checkboxAcidoUrico"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tengo ácido úrico alto en sangre (Hiperuricemia)" />
+
+            <CheckBox
+                android:id="@+id/condiciones_checkboxDiabetes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tengo diabetes" />
             <!--  Botón de Registro  -->
-            <Button android:id="@+id/Registro_btnRegistrarse" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_marginTop="16dp" android:layout_marginEnd="16dp" android:background="@drawable/button_rounded" android:text="Guardar"/>
-            <Space android:layout_width="match_parent" android:layout_height="41dp"/>
+            <Button
+                android:id="@+id/Registro_btnRegistrarse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/button_rounded"
+                android:text="Guardar" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="41dp" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
