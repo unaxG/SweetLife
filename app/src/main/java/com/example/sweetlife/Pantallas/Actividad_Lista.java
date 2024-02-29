@@ -26,6 +26,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Actividad_Lista extends AppCompatActivity {
@@ -192,15 +193,17 @@ public class Actividad_Lista extends AppCompatActivity {
 
     public void colocarEjercicios(){
 
-        for(int i = 0; i < ejercicios.size(); i++){
+        for(int i = 0; i < ejercicios.size(); i++) {
 
-            TextView ejercicio = new TextView(Actividad_Lista.this);
+            if (esApto(ejercicios.get(i))) {
 
-            //atributos del textview y layout
-            ejercicio.setText(ejercicios.get(i).getNombre());
-            ejercicio.setId(i);
-            ejercicio.setTextSize(20);
-            ejercicio.setGravity(Gravity.CENTER);
+                TextView ejercicio = new TextView(Actividad_Lista.this);
+
+                //atributos del textview y layout
+                ejercicio.setText(ejercicios.get(i).getNombre());
+                ejercicio.setId(i);
+                ejercicio.setTextSize(20);
+                ejercicio.setGravity(Gravity.CENTER);
 
             /*
             // Definir el fondo del TextView
@@ -211,52 +214,144 @@ public class Actividad_Lista extends AppCompatActivity {
             drawable.setColor(colorfondo); // color
             comida.setBackground(drawable);
             */
-            ejercicio.setTypeface(null, Typeface.ITALIC);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    LinearLayout.LayoutParams.WRAP_CONTENT
+                ejercicio.setTypeface(null, Typeface.ITALIC);
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
 
-            );
-            params.setMargins(0, 10, 0, 30);
-            ejercicio.setLayoutParams(params); //aplicar cambios de estylo
+                );
+                params.setMargins(0, 10, 0, 30);
+                ejercicio.setLayoutParams(params); //aplicar cambios de estylo
 
-            //añadir textview
-            ((LinearLayout) linearLayout).addView(ejercicio);
+                //añadir textview
+                ((LinearLayout) linearLayout).addView(ejercicio);
 
-            // Crear un view como línea decorativa
-            View linea = new View(Actividad_Lista.this);
-            linea.setLayoutParams(new LinearLayout.LayoutParams(
-                    800, // ancho de la línea en pixeles
-                    5    // altura de la línea en pixeles
-            ));
-            int colorfondo = Color.parseColor("#d1727c");
-            linea.setBackgroundColor(colorfondo);
+                // Crear un view como línea decorativa
+                View linea = new View(Actividad_Lista.this);
+                linea.setLayoutParams(new LinearLayout.LayoutParams(
+                        800, // ancho de la línea en pixeles
+                        5    // altura de la línea en pixeles
+                ));
+                int colorfondo = Color.parseColor("#d1727c");
+                linea.setBackgroundColor(colorfondo);
 
-            // Agregar la linea al LinearLayout
-            ((LinearLayout) linearLayout).addView(linea);
+                // Agregar la linea al LinearLayout
+                ((LinearLayout) linearLayout).addView(linea);
 
-            //textview onclicklistener
-            ejercicio.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //pasar a la pagina de ejercicio seleccionado
-                    for(int i=0;i<ejercicios.size();i++){
-                        if(ejercicios.get(i).getNombre().equals(ejercicio.getText())){
-                            ejercicioSeleccionado=ejercicios.get(i);
+                //textview onclicklistener
+                ejercicio.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //pasar a la pagina de ejercicio seleccionado
+                        for (int i = 0; i < ejercicios.size(); i++) {
+                            if (ejercicios.get(i).getNombre().equals(ejercicio.getText())) {
+                                ejercicioSeleccionado = ejercicios.get(i);
+                            }
                         }
+
+                        Intent cambio = new Intent(Actividad_Lista.this, Actividad.class);
+                        cambio.putExtra("ejercicio", (Serializable) ejercicioSeleccionado);
+                        startActivity(cambio);
+
                     }
-
-                    Intent cambio = new Intent(Actividad_Lista.this, Actividad.class);
-                    cambio.putExtra("ejercicio", (Serializable) ejercicioSeleccionado);
-                    startActivity(cambio);
-
-                }
-            });
+                });
 
 
-        }//fin bucle
-
+            }//fin bucle
+        }//fin if esApto
     } //fin metodo colocarcomida
+
+
+    public boolean esApto(Ejercicio ejercicio){
+
+        boolean esApto=true;
+
+        try {
+            String[] lista = ejercicio.getFiltros().split(", ");
+
+            if (infoUsuario.isFumar() && esApto) {
+
+                for (int i = 0; i < lista.length; i++) {
+                    if (lista[i].equals("Fumar")) {
+                        esApto = false;
+                    }
+                }
+            }
+
+
+            if (infoUsuario.isArtritis() && esApto) {
+
+                for (int i = 0; i < lista.length; i++) {
+                    if (lista[i].equals("Artritis")) {
+                        esApto = false;
+                    }
+                }
+            }
+
+            if (infoUsuario.isProblemasCorazon() && esApto) {
+
+                for (int i = 0; i < lista.length; i++) {
+                    if (lista[i].equals("pCorazon")) {
+                        esApto = false;
+                    }
+                }
+            }
+
+            if (infoUsuario.isDiabetes() && esApto) {
+
+                for (int i = 0; i < lista.length; i++) {
+                    if (lista[i].equals("Diabetes")) {
+                        esApto = false;
+                    }
+                }
+            }
+
+            if (infoUsuario.isAsma() && esApto) {
+
+                for (int i = 0; i < lista.length; i++) {
+                    if (lista[i].equals("Asma")) {
+                        esApto = false;
+                    }
+                }
+            }
+
+            if (infoUsuario.isAcidoUrico() && esApto) {
+
+                for (int i = 0; i < lista.length; i++) {
+                    if (lista[i].equals("Acido")) {
+                        esApto = false;
+                    }
+                }
+            }
+
+            if (infoUsuario.isPresionBaja() && esApto) {
+
+                for (int i = 0; i < lista.length; i++) {
+                    if (lista[i].equals("pBaja")) {
+                        esApto = false;
+                    }
+                }
+            }
+
+            if (infoUsuario.isPresionAlta() && esApto) {
+
+                for (int i = 0; i < lista.length; i++) {
+                    if (lista[i].equals("pAlta")) {
+                        esApto = false;
+                    }
+                }
+            }
+
+        }catch(NullPointerException e){
+            System.out.print("NullPointerException caught");
+            Log.d(TAG, "NullPointerException caught");
+        }
+
+
+
+        return esApto;
+
+    }
 
 
 }

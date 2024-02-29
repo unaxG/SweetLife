@@ -9,11 +9,14 @@ public class Ejercicio implements Serializable {
     private String Material;
     private String Url;
 
-    public Ejercicio(String nombre, String descripcion, String material, String url) {
+    private String Filtros;
+
+    public Ejercicio(String nombre, String descripcion, String material, String url, String filtros) {
         Nombre = nombre;
         Descripcion = descripcion;
         Material = material;
         Url = url;
+        Filtros = filtros;
     }
 
     public Ejercicio() {
@@ -50,4 +53,13 @@ public class Ejercicio implements Serializable {
     public void setUrl(String url) {
         Url = url;
     }
+
+    public String getFiltros() {
+        return Filtros;
+    }
+
+    public void setFiltros(String filtros) {
+        Filtros = filtros;
+    }
+
 }
