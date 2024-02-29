@@ -78,7 +78,7 @@ public class Comida_Lista extends AppCompatActivity {
             recogerInfoFirebase(estado);
         }
 
-        recogerInfoFirebase(estado);
+
 
     }
 

@@ -37,6 +37,8 @@ public class Principal extends AppCompatActivity {
     ImageView buttonInformacionPersonal;
     ImageView buttonCuenta;
 
+    String usuario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,12 +63,42 @@ public class Principal extends AppCompatActivity {
 
 
         Bundle bundle = getIntent().getExtras();
-        String usuario = bundle.getString("usuario");
+        usuario = bundle.getString("usuario");
 
 
 
         recogerInfoFirebase(usuario);
 
+
+
+
+    }
+
+    public void recogerInfoFirebase(String usuario){
+        db = FirebaseFirestore.getInstance();
+        DocumentReference docRef  = db.collection("Usuarios").document(usuario);
+        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Informacion informacion = documentSnapshot.toObject(Informacion.class);
+                Log.d(TAG, informacion.getNombre());
+
+
+                if(informacion.getNombre().length()>0){
+                    bienvenida.setText("Bienvenido "+informacion.getNombre()+"!");
+                }else{
+                    bienvenida.setText("Bienvenido usuario!");
+                }
+
+                infoUsuario=informacion;
+
+                setOnClicks();
+
+            }
+        });
+    }
+
+    public void setOnClicks(){
 
         buttonCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,33 +170,6 @@ public class Principal extends AppCompatActivity {
             }
         });
 
-    }
 
-    public void recogerInfoFirebase(String usuario){
-        db = FirebaseFirestore.getInstance();
-        DocumentReference docRef  = db.collection("Usuarios").document(usuario);
-        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Informacion informacion = documentSnapshot.toObject(Informacion.class);
-                Log.d(TAG, informacion.getNombre());
-
-
-                if(informacion.getNombre().length()>0){
-                    bienvenida.setText("Bienvenido "+informacion.getNombre()+"!");
-                }else{
-                    bienvenida.setText("Bienvenido usuario!");
-                }
-
-                infoUsuario=informacion;
-
-                buttonActividad.setClickable(true);
-                buttonNutricion.setClickable(true);
-                buttonEstado.setClickable(true);
-                buttonMedidas.setClickable(true);
-                buttonInformacionPersonal.setClickable(true);
-
-            }
-        });
     }
 }
