@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.sweetlife.BaseDeDatos.Informacion;
@@ -31,8 +32,8 @@ public class Registro extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    CheckBox presionBaja;
-    CheckBox presionAlta;
+    RadioButton presionBaja;
+    RadioButton presionAlta;
 
 // ...
 // Initialize Firebase Auth
@@ -44,8 +45,8 @@ public class Registro extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        presionBaja = (CheckBox) findViewById(R.id.condiciones_checkboxPresionArterialBaja);
-        presionAlta = (CheckBox) findViewById(R.id.condiciones_checkboxPresionArterialAlta);
+        presionBaja = (RadioButton) findViewById(R.id.radioButtonPresionBaja);
+        presionAlta = (RadioButton) findViewById(R.id.radioButtonPresionAlta);
 
 
         Button confirmar = (Button) findViewById(R.id.Registro_btnRegistrarse);

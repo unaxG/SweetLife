@@ -177,17 +177,22 @@
                 android:text="Tengo asma" />
 
             <!-- presión arterial alta -->
-            <CheckBox
-                android:id="@+id/condiciones_checkboxPresionArterialBaja"
+            <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tengo la presion arterial baja" />
+                android:layout_height="match_parent" >
 
-            <CheckBox
-                android:id="@+id/condiciones_checkboxPresionArterialAlta"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tengo la presion arterial alta" />
+                <RadioButton
+                    android:id="@+id/radioButtonPresionBaja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tengo la presion arterial baja" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonPresionAlta"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tengo la presion arterial alta" />
+            </RadioGroup>
 
             <!-- artritis -->
             <CheckBox
