@@ -15,6 +15,12 @@
         android:theme="@style/Theme.SweetLife"
         tools:targetApi="31">
         <activity
+            android:name=".Pantallas.Actividad_Lista"
+            android:exported="false" />
+        <activity
+            android:name=".Pantallas.Seleccion_Actividad"
+            android:exported="false" />
+        <activity
             android:name=".Pantallas.Seleccion_Nutricion"
             android:exported="false" />
         <activity

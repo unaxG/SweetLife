@@ -63,9 +63,46 @@ public class Seleccion_Actividad extends AppCompatActivity {
                 Bundle bundle = getIntent().getExtras();
                 este_infoUsuario = (Informacion) bundle.getSerializable("informacion");
 
-                Intent cambio = new Intent(Seleccion_Actividad.this, Comida_Lista.class);
+                Intent cambio = new Intent(Seleccion_Actividad.this, Actividad_Lista.class);
                 cambio.putExtra("usuario", usuario);
                 cambio.putExtra("nueva_informacion", (Serializable) este_infoUsuario);
+                cambio.putExtra("tipoActividad", "Brazos");
+                startActivity(cambio);
+            }
+        });
+
+        linear_torso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = getIntent();
+                String usuario = intent.getStringExtra("usuario");
+
+                Bundle bundle = getIntent().getExtras();
+                este_infoUsuario = (Informacion) bundle.getSerializable("informacion");
+
+                Intent cambio = new Intent(Seleccion_Actividad.this, Actividad_Lista.class);
+                cambio.putExtra("usuario", usuario);
+                cambio.putExtra("nueva_informacion", (Serializable) este_infoUsuario);
+                cambio.putExtra("tipoActividad", "Torso");
+                startActivity(cambio);
+            }
+        });
+
+        linear_pierna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = getIntent();
+                String usuario = intent.getStringExtra("usuario");
+
+                Bundle bundle = getIntent().getExtras();
+                este_infoUsuario = (Informacion) bundle.getSerializable("informacion");
+
+                Intent cambio = new Intent(Seleccion_Actividad.this, Actividad_Lista.class);
+                cambio.putExtra("usuario", usuario);
+                cambio.putExtra("nueva_informacion", (Serializable) este_infoUsuario);
+                cambio.putExtra("tipoActividad", "Pierna");
                 startActivity(cambio);
             }
         });
